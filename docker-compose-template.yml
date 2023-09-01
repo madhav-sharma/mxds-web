@@ -1,0 +1,16 @@
+version: "3.9"
+
+services:
+  mxds-web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    hostname: mxds-web
+    networks:
+      - mxds-proxy_proxy-net
+networks:
+  mxds-proxy_proxy-net:
+    external: true
+
